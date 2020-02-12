@@ -33,7 +33,7 @@
     ></script>
 </head>
 
-<body>
+<body onclick="$('#kb').focus()">
 
     <pre
         onkeydown="key()"
@@ -47,9 +47,9 @@
         <button onclick="x3=!x3">3*Productivity</button>
     </div>
     <input
+        type="text"
         id="kb"
         maxlength="0"
-        style="display: none;"
     />
 </body>
 <script>
@@ -75,12 +75,10 @@
     }
 
     logtitle(any.toUpperCase());
-    window.onload = function () {
-        $("#kb").focus();
-    }
-    // document.addEventListener('keyup', logKey);
-    // document.addEventListener('touchend', event => {
-    //     alert('Doh!')
+
+    document.addEventListener('keyup', logKey);
+    // document.addEventListener('touchstart', event => {
+    //     // alert('Doh!')
     //     document.getElementById('kb').focus()
     // })
 
