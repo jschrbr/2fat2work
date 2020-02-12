@@ -75,7 +75,8 @@
     logtitle(any.toUpperCase());
 
     document.addEventListener('keypress', logKey);
-    document.addEventListener('touch', event => {
+    document.addEventListener('touchstart', event => {
+        // alert('Doh!')
         document.getElementById('kb').focus()
     })
 
