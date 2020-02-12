@@ -104,7 +104,7 @@
             status = 1
         }
         else if (status == 1) {
-            if (e.key == 'Unidentified') {
+            if (e.keyCode == 229) {
                 e.key = 'Y'
             }
             if (e.key.toUpperCase() == 'Y' || e.key.toUpperCase() == 'N') {
@@ -144,7 +144,7 @@
             }
         }
         else if (status == 2) {
-            if (e.key == 'Unidentified') {
+            if (e.keyCode == 229) {
                 e.key = 'E'
             }
             if (e.key.toUpperCase() == 'E' || e.key.toUpperCase() == 'O') {
@@ -173,7 +173,7 @@
             }
         }
         else if (status == 3) {
-            if (e.key == 'Unidentified') {
+            if (e.keyCode == 229) {
                 e.key = 'S'
             }
             resp3 = e.key.toUpperCase()
