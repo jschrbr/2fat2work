@@ -34,6 +34,10 @@
 </head>
 
 <body>
+    <input
+        id="kb"
+        style="display: none;"
+    />
     <pre
         onkeydown="key()"
         id="log"
@@ -72,7 +76,7 @@
 
     document.addEventListener('keypress', logKey);
     document.addEventListener('touch', event => {
-        focus()
+        document.getElementById('kb').focus()
     })
 
     var warn = window.setTimeout(function () { logtitle(resp[0].toUpperCase()) }, delay);
