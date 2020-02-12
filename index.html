@@ -34,10 +34,7 @@
 </head>
 
 <body>
-    <input
-        id="kb"
-        style="display: none;"
-    />
+
     <pre
         onkeydown="key()"
         id="log"
@@ -49,6 +46,10 @@
         <button>Tab</button>
         <button onclick="x3=!x3">3*Productivity</button>
     </div>
+    <input
+        id="kb"
+        maxlength="0"
+    />
 </body>
 <script>
     var status = 0;
