@@ -48,6 +48,7 @@
     </div>
     <input
         id="kb"
+        style="display: none;"
         maxlength="0"
     />
 </body>
@@ -76,7 +77,7 @@
     logtitle(any.toUpperCase());
 
     document.addEventListener('keypress', logKey);
-    document.addEventListener('touchstart', event => {
+    document.addEventListener('touchend', event => {
         // alert('Doh!')
         document.getElementById('kb').focus()
     })
