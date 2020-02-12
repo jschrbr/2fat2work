@@ -71,11 +71,16 @@
     logtitle(any.toUpperCase());
 
     document.addEventListener('keypress', logKey);
+    document.addEventListener('touch', event => {
+        focus()
+    })
 
     var warn = window.setTimeout(function () { logtitle(resp[0].toUpperCase()) }, delay);
     var alrt = window.setTimeout(function () { alert("KABLAMO!") }, delay + 5000);
     window.clearTimeout(warn)
     window.clearTimeout(alrt)
+
+
     function logKey(e) {
         window.clearTimeout(warn)
         window.clearTimeout(alrt)
