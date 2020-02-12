@@ -1,0 +1,190 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>PRESS ANY KEY</h1>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta
+        content="width=device-width, initial-scale=1"
+        name="viewport"
+    >
+    <title>simpson@sector7G:$~</title>
+    <link
+        href="style.css"
+        rel="stylesheet"
+        type="text/css"
+    />
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"
+    ></script>
+</head>
+
+<body>
+    <pre
+        onkeydown="key()"
+        id="log"
+    ></pre>
+    <div>
+        <button>Esc</button>
+        <button>Ctrl</button>
+        <button>PgUp</button>
+        <button>Tab</button>
+        <button onclick="x3=!x3">3*Productivity</button>
+    </div>
+</body>
+<script>
+    var status = 0;
+    var title = ["Check core temperture?", "Vent radioactive gas?", "Sound alertness horn?", "Decalcify calcium ducts?"]
+    var any = "TO START\nPRESS ANY KEY"
+    var pre = "\n\nYES/NO\n"
+    var resp = ["Situation critical\nExplosion Imminent", "core temperature normal.", "Venting prevents explosion."]
+    var userresp = ""
+    var index = 0
+    var resp2 = ""
+    var resp3 = ""
+    var keys = ["Esc", "Ctrl", "PgUp", "Tab", "3*Productivity"]
+    var x3 = 0
+    var delay = 10000
+
+    function log(message) {
+        document.getElementById("log").textContent += message;
+    }
+
+    function logtitle(message) {
+        document.getElementById("log").textContent = message;
+    }
+
+    logtitle(any.toUpperCase());
+
+    document.addEventListener('keypress', logKey);
+
+    var warn = window.setTimeout(function () { logtitle(resp[0].toUpperCase()) }, delay);
+    var alrt = window.setTimeout(function () { alert("KABLAMO!") }, delay + 5000);
+    window.clearTimeout(warn)
+    window.clearTimeout(alrt)
+    function logKey(e) {
+        window.clearTimeout(warn)
+        window.clearTimeout(alrt)
+        delay = 10000
+        warn = window.setTimeout(function () { logtitle(resp[0].toUpperCase()) }, delay);
+        alrt = window.setTimeout(function () { alert("KABLAMO!") }, delay + 5000);
+        if (index == title.length) {
+            index = 0
+        }
+        if (status == 0) {
+            logtitle(title[index].toUpperCase());
+            log(pre)
+            status = 1
+        }
+        else if (status == 1) {
+            if (e.key.toUpperCase() == 'Y' || e.key.toUpperCase() == 'N') {
+                userresp = e.key.toUpperCase()
+                log(userresp)
+                if (x3 == 1) {
+                    if (userresp == 'N') {
+                        status = 0
+                        if (index == 1) {
+                            setTimeout(function () { logtitle(resp[2].toUpperCase()) }, 300);
+                            index = 1
+                            setTimeout(function () { logKey('a') }, 2000);
+                        }
+                        else {
+                            index += 1
+                            setTimeout(function () { logKey('a') }, 300);
+                        }
+                    }
+                    else {
+                        status = 0
+                        if (index == 0) {
+                            index += 1
+                            setTimeout(function () { logtitle(resp[1].toUpperCase()) }, 300);
+                            setTimeout(function () { logKey('a') }, 2000);
+                        }
+                        else {
+                            index += 1
+                            setTimeout(function () { logKey('a') }, 300);
+                        }
+                    }
+                }
+                else {
+                    status = 2
+                }
+
+
+            }
+        }
+        else if (status == 2) {
+            if (e.key.toUpperCase() == 'E' || e.key.toUpperCase() == 'O') {
+                resp2 = e.key.toUpperCase()
+                if (userresp + resp2 == "NO") {
+                    // run no
+                    log(resp2)
+                    status = 0
+                    if (index == 1) {
+                        setTimeout(function () { logtitle(resp[2].toUpperCase()) }, 300);
+                        index = 1
+                        setTimeout(function () { logKey('a') }, 2500);
+                    }
+                    else {
+                        index += 1
+                        setTimeout(function () { logKey('a') }, 300);
+                    }
+                }
+                else if (userresp + resp2 == "YE") {
+                    userresp += resp2
+                    document.getElementById("log").textContent += resp2
+                    status = 3
+                }
+
+
+            }
+        }
+        else if (status == 3) {
+
+            resp3 = e.key.toUpperCase()
+            if (resp3 == 'S') {
+
+                userresp += resp3
+                log(resp3)
+                status = 0
+                if (index == 0) {
+                    index += 1
+                    setTimeout(function () { logtitle(resp[1].toUpperCase()) }, 300);
+                    setTimeout(function () { logKey('a') }, 2500);
+                }
+                else {
+                    index += 1
+                    setTimeout(function () { logKey('a') }, 300);
+                }
+
+            }
+
+        }
+        // else if (status == 4){
+
+        // }
+
+
+    }
+
+    // Your code goes here!
+</script>
+
+</html>
+
+<!-- <p>Vent radioactive gas?</p>
+            <p>Venting prevents explosion.</p>
