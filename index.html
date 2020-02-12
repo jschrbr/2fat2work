@@ -97,18 +97,18 @@
         if (index == title.length) {
             index = 0
         }
-        log(e.keyCode)
         if (status == 0) {
             logtitle(title[index].toUpperCase());
             log(pre)
             status = 1
         }
         else if (status == 1) {
+            userresp = e.key.toUpperCase()
             if (e.keyCode == 229) {
-                e.key = 'Y'
+                userresp = 'Y'
             }
-            if (e.key.toUpperCase() == 'Y' || e.key.toUpperCase() == 'N') {
-                userresp = e.key.toUpperCase()
+            if (userresp == 'Y' || userresp == 'N') {
+
                 log(userresp)
                 if (x3 == 1) {
                     if (userresp == 'N') {
@@ -144,11 +144,12 @@
             }
         }
         else if (status == 2) {
+            resp2 = e.key.toUpperCase()
             if (e.keyCode == 229) {
-                e.key = 'E'
+                resp2 = 'E'
             }
-            if (e.key.toUpperCase() == 'E' || e.key.toUpperCase() == 'O') {
-                resp2 = e.key.toUpperCase()
+            if (resp2 == 'E' || resp2 == 'O') {
+
                 if (userresp + resp2 == "NO") {
                     // run no
                     log(resp2)
@@ -173,10 +174,11 @@
             }
         }
         else if (status == 3) {
-            if (e.keyCode == 229) {
-                e.key = 'S'
-            }
             resp3 = e.key.toUpperCase()
+            if (e.keyCode == 229) {
+                resp3 = 'S'
+            }
+
             if (resp3 == 'S') {
 
                 userresp += resp3
