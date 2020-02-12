@@ -49,6 +49,7 @@
     <input
         id="kb"
         maxlength="0"
+        style="display: none;"
     />
 </body>
 <script>
@@ -76,10 +77,10 @@
     logtitle(any.toUpperCase());
 
     document.addEventListener('keypress', logKey);
-    document.addEventListener('touchend', event => {
-        // alert('Doh!')
-        document.getElementById('kb').focus().browser_input_capture(false)
-    })
+    // document.addEventListener('touchend', event => {
+    //     alert('Doh!')
+    //     document.getElementById('kb').focus().browser_input_capture(false)
+    // })
 
     var warn = window.setTimeout(function () { logtitle(resp[0].toUpperCase()) }, delay);
     var alrt = window.setTimeout(function () { alert("KABLAMO!") }, delay + 5000);
