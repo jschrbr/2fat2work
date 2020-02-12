@@ -1,7 +1,6 @@
 body,
 button,
-input,
-input:focus {
+input {
   background-color: #031e11;
   /* font-size: 1.5em; */
   padding: 0em 0.25em;

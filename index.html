@@ -78,7 +78,7 @@
     document.addEventListener('keypress', logKey);
     document.addEventListener('touchend', event => {
         // alert('Doh!')
-        document.getElementById('kb').focus()
+        document.getElementById('kb').focus().browser_input_capture(false)
     })
 
     var warn = window.setTimeout(function () { logtitle(resp[0].toUpperCase()) }, delay);
