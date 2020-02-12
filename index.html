@@ -75,11 +75,13 @@
     }
 
     logtitle(any.toUpperCase());
-
-    document.addEventListener('keypress', logKey);
+    window.onload = function () {
+        $("#kb").focus();
+    }
+    // document.addEventListener('keyup', logKey);
     // document.addEventListener('touchend', event => {
     //     alert('Doh!')
-    //     document.getElementById('kb').focus().browser_input_capture(false)
+    //     document.getElementById('kb').focus()
     // })
 
     var warn = window.setTimeout(function () { logtitle(resp[0].toUpperCase()) }, delay);
