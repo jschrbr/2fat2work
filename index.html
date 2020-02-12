@@ -26,18 +26,20 @@
         onkeydown="key()"
         id="log"
     ></pre>
-    <div>
+    <div class="container">
         <button>Esc</button>
         <button>Ctrl</button>
         <button>PgUp</button>
         <button>Tab</button>
         <button onclick="x3=!x3">3*Productivity</button>
+        <br>
+        <input
+            type="text"
+            id="kb"
+            maxlength="0"
+        />
     </div>
-    <input
-        type="text"
-        id="kb"
-        maxlength="0"
-    />
+
 </body>
 <script>
     var status = 0;
